@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         val snapHelper: SnapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(recyclerView)
 
+        recyclerView.addItemDecoration(OffsetItemDecoration())
+
         val position =  (abs(sliderItems2.count() * 0.5)).toInt()
         centerAtPosition(position)
     }
