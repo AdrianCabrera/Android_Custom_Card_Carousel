@@ -40,16 +40,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun centerAtPosition(position: Int){
-        val cardWidthMiddle = 150
-        customLinearLayoutManager.scrollToPositionWithOffset(position, cardWidthMiddle);
-
-        /*
         recyclerView.post {
-            val factorWidth = 0.75
-            val cardWidth = (factorWidth * recyclerView.width).toInt()
-            customLinearLayoutManager.scrollToPositionWithOffset(position, (cardWidth * 0.5.toInt()))
+            val cardWidth = TriangleShapeView.factorWidth * recyclerView.width
+            val centerRecyclerViewPoint = recyclerView.width * 0.5
+            val center = centerRecyclerViewPoint - (cardWidth * 0.5)
+            customLinearLayoutManager.scrollToPositionWithOffset(position, center.toInt() )
         }
-         */
+
     }
 
 }

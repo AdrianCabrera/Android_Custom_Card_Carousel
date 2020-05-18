@@ -29,14 +29,13 @@ class RecyclerAdapter(private val cards: ArrayList<SliderItem>) : RecyclerView.A
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
-        val factorWidth= 0.75
-        val factorHeight = 0.75
-        val width = (factorWidth * parent.width).toInt()
-        val height = (factorHeight * parent.height).toInt()
+
+        val width = (TriangleShapeView.factorWidth * parent.width).toInt()
+        val height = (TriangleShapeView.factorHeight * parent.height).toInt()
 
         params.width = width
         params.height = height
-        //cardView.layoutParams = params
+        cardView.layoutParams = params
 
         return CardHolder(inflatedView)
     }

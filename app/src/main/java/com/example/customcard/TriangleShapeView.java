@@ -13,6 +13,8 @@ public class TriangleShapeView extends ConstraintLayout {
 
     public int colorCode = Color.WHITE;
     public int currentCard = 1;
+    public static float factorWidth = 0.75f;
+    public static float factorHeight = 0.75f;
 
     public int getColorCode() {
         return colorCode;
