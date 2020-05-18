@@ -11,7 +11,7 @@
     android:gravity="center_horizontal"
     android:adjustViewBounds="true"
     >
-    <com.example.customcard.TriangleShapeView
+    <com.example.customcard.CardShapeView
         android:id="@+id/cardView"
         android:layout_width="300dp"
         android:layout_height="500dp"
@@ -39,5 +39,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="123" />
-    </com.example.customcard.TriangleShapeView>
+    </com.example.customcard.CardShapeView>
 </android.support.constraint.ConstraintLayout>

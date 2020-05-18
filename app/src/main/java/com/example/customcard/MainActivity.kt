@@ -24,12 +24,12 @@ class MainActivity : AppCompatActivity() {
         customLinearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
         recyclerView.layoutManager = customLinearLayoutManager
 
-        val firstCard = SliderItem( 1)
-        val secondCard = SliderItem( 2)
-        val thirdCard = SliderItem( 3)
-        val sliderItems2: ArrayList<SliderItem> = arrayListOf(firstCard,secondCard,thirdCard)
+        val firstCard = Card(1)
+        val secondCard = Card(2)
+        val thirdCard = Card(3)
+        val cards: ArrayList<Card> = arrayListOf(firstCard, secondCard, thirdCard)
 
-        adapter = RecyclerAdapter(sliderItems2)
+        adapter = RecyclerAdapter(cards)
         recyclerView.adapter = adapter
 
         val snapHelper: SnapHelper = PagerSnapHelper()
@@ -37,16 +37,16 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.addItemDecoration(OffsetItemDecoration())
 
-        val position =  (abs(sliderItems2.count() * 0.5)).toInt()
+        val position = (abs(cards.count() * 0.5)).toInt()
         centerAtPosition(position)
     }
 
-    fun centerAtPosition(position: Int){
+    fun centerAtPosition(position: Int) {
         recyclerView.post {
-            val cardWidth = TriangleShapeView.factorWidth * recyclerView.width
+            val cardWidth = CardShapeView.factorWidth * recyclerView.width
             val centerRecyclerViewPoint = recyclerView.width * 0.5
             val center = centerRecyclerViewPoint - (cardWidth * 0.5)
-            customLinearLayoutManager.scrollToPositionWithOffset(position, center.toInt() )
+            customLinearLayoutManager.scrollToPositionWithOffset(position, center.toInt())
         }
 
     }
